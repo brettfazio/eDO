@@ -15,7 +15,7 @@ private_headers = (Dir.glob("*/Sources/*.h")) - public_headers
 
 Pod::Spec.new do |s|
 
-	s.name = "eDistantObject"
+	s.name = "eDO"
 	s.version = "2.0.5"
 	s.summary = "ObjC and Swift remote invocation framework"
 	s.homepage = "https://github.com/brettfazio/eDO"
