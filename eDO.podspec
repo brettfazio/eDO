@@ -16,32 +16,32 @@ private_headers = (Dir.glob("*/Sources/*.h")) - public_headers
 original_string_or_regex = "Service/Sources/"
 replacement_string = ""
 
-print(Dir.home)
+print(Dir.pwd)
 
 # Dir.glob will take care of the recursivity for you
 # do not use ~ but rather Dir.home
-Dir.glob("#{Dir.home}/*") do |file_name|
+Dir.glob("#{Dir.pwd}/*") do |file_name|
   text = File.read(file_name)
   replace = text.gsub!(original_string_or_regex, replacement_string)
   File.open(file_name, "w") { |file| file.puts replace }
 end
 
 original_string_or_regex = "Channel/Sources/"
-Dir.glob("#{Dir.home}/*") do |file_name|
+Dir.glob("#{Dir.pwd}/*") do |file_name|
   text = File.read(file_name)
   replace = text.gsub!(original_string_or_regex, replacement_string)
   File.open(file_name, "w") { |file| file.puts replace }
 end
 
 original_string_or_regex = "Device/Sources/"
-Dir.glob("#{Dir.home}/*") do |file_name|
+Dir.glob("#{Dir.pwd}/*") do |file_name|
   text = File.read(file_name)
   replace = text.gsub!(original_string_or_regex, replacement_string)
   File.open(file_name, "w") { |file| file.puts replace }
 end
 
 original_string_or_regex = "Measure/Sources/"
-Dir.glob("#{Dir.home}/*") do |file_name|
+Dir.glob("#{Dir.pwd}/*") do |file_name|
   text = File.read(file_name)
   replace = text.gsub!(original_string_or_regex, replacement_string)
   File.open(file_name, "w") { |file| file.puts replace }
@@ -50,7 +50,7 @@ end
 Pod::Spec.new do |s|
 
 	s.name = "eDO"
-	s.version = "2.0.11"
+	s.version = "2.0.12"
 	s.summary = "ObjC and Swift remote invocation framework"
 	s.homepage = "https://github.com/brettfazio/eDO"
 	s.author = "Google Inc."
