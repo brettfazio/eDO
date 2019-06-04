@@ -16,6 +16,8 @@ private_headers = (Dir.glob("*/Sources/*.h")) - public_headers
 original_string_or_regex = "Service/Sources/"
 replacement_string = ""
 
+print(Dir.home)
+
 # Dir.glob will take care of the recursivity for you
 # do not use ~ but rather Dir.home
 Dir.glob("#{Dir.home}/Desktop/macshapa_v2/*") do |file_name|
@@ -48,7 +50,7 @@ end
 Pod::Spec.new do |s|
 
 	s.name = "eDO"
-	s.version = "2.0.9"
+	s.version = "2.0.10"
 	s.summary = "ObjC and Swift remote invocation framework"
 	s.homepage = "https://github.com/brettfazio/eDO"
 	s.author = "Google Inc."
