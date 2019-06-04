@@ -34,7 +34,7 @@ device_pri = (Dir.glob("Device/Sources/*.h")) - device_pub
 Pod::Spec.new do |s|
 
 	s.name = "eDO"
-	s.version = "2.0.13"
+	s.version = "2.0.14"
 	s.summary = "ObjC and Swift remote invocation framework"
 	s.homepage = "https://github.com/brettfazio/eDO"
 	s.author = "Google Inc."
