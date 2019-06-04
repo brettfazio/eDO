@@ -49,7 +49,7 @@ Pod::Spec.new do |s|
 	
 	s.subspec 'Service' do |service|
 		service.source_files = "Service/Sources/*.{m,h}"
-		serivce.public_header_files = service_pub
+		service.public_header_files = service_pub
 		service.private_header_files = service_pri
 		service.header_mappings_dir = "Service/Sources"
 	end
