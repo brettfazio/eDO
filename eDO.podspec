@@ -34,7 +34,7 @@ device_pri = (Dir.glob("Device/Sources/*.h")) - device_pub
 Pod::Spec.new do |s|
 
 	s.name = "eDO"
-	s.version = "2.0.17"
+	s.version = "2.0.19"
 	s.summary = "ObjC and Swift remote invocation framework"
 	s.homepage = "https://github.com/brettfazio/eDO"
 	s.author = "Google Inc."
@@ -46,6 +46,8 @@ Pod::Spec.new do |s|
 	# Can't have the public headers exist in the private headers as you won't be able to import them. Made vars at top because of this.
 	#s.public_header_files = public_headers
 	#s.private_header_files = private_headers
+	
+	s.xcconfig = { 'USER_HEADER_SEARCH_PATHS' => '"$(SOURCE_ROOT)/eDO/**"' }
 	
 	s.subspec 'Service' do |service|
 		service.source_files = "Service/Sources/*.{m,h}"
