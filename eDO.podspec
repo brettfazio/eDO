@@ -13,10 +13,42 @@ public_headers = ["Service/Sources/EDOClientService.h",
                   "Device/Sources/EDODeviceDetector.h"]
 private_headers = (Dir.glob("*/Sources/*.h")) - public_headers
 
+original_string_or_regex = "Service/Sources/"
+replacement_string = ""
+
+# Dir.glob will take care of the recursivity for you
+# do not use ~ but rather Dir.home
+Dir.glob("#{Dir.home}/Desktop/macshapa_v2/*") do |file_name|
+  text = File.read(file_name)
+  replace = text.gsub!(original_string_or_regex, replacement_string)
+  File.open(file_name, "w") { |file| file.puts replace }
+end
+
+original_string_or_regex = "Channel/Sources/"
+Dir.glob("#{Dir.home}/Desktop/macshapa_v2/*") do |file_name|
+  text = File.read(file_name)
+  replace = text.gsub!(original_string_or_regex, replacement_string)
+  File.open(file_name, "w") { |file| file.puts replace }
+end
+
+original_string_or_regex = "Device/Sources/"
+Dir.glob("#{Dir.home}/Desktop/macshapa_v2/*") do |file_name|
+  text = File.read(file_name)
+  replace = text.gsub!(original_string_or_regex, replacement_string)
+  File.open(file_name, "w") { |file| file.puts replace }
+end
+
+original_string_or_regex = "Measure/Sources/"
+Dir.glob("#{Dir.home}/Desktop/macshapa_v2/*") do |file_name|
+  text = File.read(file_name)
+  replace = text.gsub!(original_string_or_regex, replacement_string)
+  File.open(file_name, "w") { |file| file.puts replace }
+end
+
 Pod::Spec.new do |s|
 
 	s.name = "eDO"
-	s.version = "2.0.8"
+	s.version = "2.0.9"
 	s.summary = "ObjC and Swift remote invocation framework"
 	s.homepage = "https://github.com/brettfazio/eDO"
 	s.author = "Google Inc."
