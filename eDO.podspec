@@ -1,40 +1,25 @@
-public_headers = ["Service/Sources/EDOClientService.h",
-                  "Service/Sources/EDOClientService+Device.h",
-                  "Service/Sources/EDOClientServiceStatsCollector.h",
-                  "Service/Sources/EDOHostNamingService.h",
-                  "Service/Sources/EDOHostService.h",
-                  "Service/Sources/EDOHostService+Device.h",
-                  "Service/Sources/EDORemoteVariable.h",
-                  "Service/Sources/EDOServiceError.h",
-                  "Service/Sources/EDOServiceException.h",
-                  "Service/Sources/EDOServicePort.h",
-                  "Service/Sources/NSObject+EDOValueObject.h",
-                  "Device/Sources/EDODeviceConnector.h",
-                  "Device/Sources/EDODeviceDetector.h"]
-private_headers = (Dir.glob("*/Sources/*.h")) - public_headers
-
-service_pub = ["Service/Sources/EDOClientService.h",
-                  "Service/Sources/EDOClientService+Device.h",
-                  "Service/Sources/EDOClientServiceStatsCollector.h",
-                  "Service/Sources/EDOHostNamingService.h",
-                  "Service/Sources/EDOHostService.h",
-                  "Service/Sources/EDOHostService+Device.h",
-                  "Service/Sources/EDORemoteVariable.h",
-                  "Service/Sources/EDOServiceError.h",
-                  "Service/Sources/EDOServiceException.h",
-                  "Service/Sources/EDOServicePort.h",
-                  "Service/Sources/NSObject+EDOValueObject.h"]
+service_pub = %w[Service/Sources/EDOClientService.h
+                 Service/Sources/EDOClientService+Device.h
+                 Service/Sources/EDOClientServiceStatsCollector.h
+                 Service/Sources/EDOHostNamingService.h
+                 Service/Sources/EDOHostService.h
+                 Service/Sources/EDOHostService+Device.h
+                 Service/Sources/EDORemoteVariable.h
+                 Service/Sources/EDOServiceError.h
+                 Service/Sources/EDOServiceException.h
+                 Service/Sources/EDOServicePort.h
+                 Service/Sources/NSObject+EDOValueObject.h]
 
 service_pri = (Dir.glob("Service/Sources/*.h")) - service_pub
 	
-device_pub = ["Device/Sources/EDODeviceConnector.h",
-                  "Device/Sources/EDODeviceDetector.h"]
+device_pub = %w[Device/Sources/EDODeviceConnector.h
+              Device/Sources/EDODeviceDetector.h]
 device_pri = (Dir.glob("Device/Sources/*.h")) - device_pub
 
 Pod::Spec.new do |s|
 
 	s.name = "eDO"
-	s.version = "2.0.20"
+	s.version = "2.0.21"
 	s.summary = "ObjC and Swift remote invocation framework"
 	s.homepage = "https://github.com/brettfazio/eDO"
 	s.author = "Google Inc."
