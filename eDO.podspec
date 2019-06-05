@@ -1,25 +1,7 @@
-service_public = %w[Service/Sources/EDOClientService.h
-                    Service/Sources/EDOClientService+Device.h
-                    Service/Sources/EDOClientServiceStatsCollector.h
-                    Service/Sources/EDOHostNamingService.h
-                    Service/Sources/EDOHostService.h
-                    Service/Sources/EDOHostService+Device.h
-                    Service/Sources/EDORemoteVariable.h
-                    Service/Sources/EDOServiceError.h
-                    Service/Sources/EDOServiceException.h
-                    Service/Sources/EDOServicePort.h
-                    Service/Sources/NSObject+EDOValueObject.h]
-
-service_private = (Dir.glob("Service/Sources/*.h")) - service_public
-
-device_public = %w[Device/Sources/EDODeviceConnector.h
-                   Device/Sources/EDODeviceDetector.h]
-device_private = (Dir.glob("Device/Sources/*.h")) - device_public
-
 Pod::Spec.new do |s|
 
 	s.name = "eDO"
-	s.version = "2.0.26"
+	s.version = "2.0.27"
 	s.summary = "ObjC and Swift remote invocation framework"
 	s.homepage = "https://github.com/brettfazio/eDO"
 	s.author = "Google Inc."
@@ -33,6 +15,20 @@ Pod::Spec.new do |s|
 	#s.private_header_files = private_headers
 	
 	s.xcconfig = { 'USER_HEADER_SEARCH_PATHS' => '$(SOURCE_ROOT)/eDO/**' }
+	
+	service_public = %w[Service/Sources/EDOClientService.h
+                    Service/Sources/EDOClientService+Device.h
+                    Service/Sources/EDOClientServiceStatsCollector.h
+                    Service/Sources/EDOHostNamingService.h
+                    Service/Sources/EDOHostService.h
+                    Service/Sources/EDOHostService+Device.h
+                    Service/Sources/EDORemoteVariable.h
+                    Service/Sources/EDOServiceError.h
+                    Service/Sources/EDOServiceException.h
+                    Service/Sources/EDOServicePort.h
+                    Service/Sources/NSObject+EDOValueObject.h]
+
+	service_private = (Dir.glob("Service/Sources/*.h")) - service_public
 	
 	s.subspec 'Service' do |service|
 		service.source_files = "Service/Sources/*.{m,h}"
@@ -52,6 +48,10 @@ Pod::Spec.new do |s|
 		measure.private_header_files = Dir.glob("Measure/Sources/*.h")
 		measure.header_dir = "Measure/Sources"
 	end
+	
+	device_public = %w[Device/Sources/EDODeviceConnector.h
+                   Device/Sources/EDODeviceDetector.h]
+	device_private = (Dir.glob("Device/Sources/*.h")) - device_public
 	
 	s.subspec 'Device' do |device|
 		device.source_files = "Device/Sources/*.{m,h}"
