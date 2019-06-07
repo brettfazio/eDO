@@ -60,4 +60,8 @@ s.subspec 'Service' do |service|
     device.header_dir = "Device/Sources"
   end
 
+
+  s.ios.deployment_target = "10.0"
+  s.osx.deployment_target = "10.10"
+
 end
