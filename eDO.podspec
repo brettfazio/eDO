@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
 	s.name = "eDO"
-	s.version = "2.0.33"
+	s.version = "2.0.34"
 	s.summary = "ObjC and Swift remote invocation framework"
 	s.homepage = "https://github.com/brettfazio/eDO"
 	s.author = "Google Inc."
@@ -35,18 +35,21 @@ Pod::Spec.new do |s|
 		service.public_header_files = service_public
 		service.private_header_files = service_private
 		service.header_mappings_dir = "Service/Sources/"
+		service.header_dir = "Service/Sources/"
 	end
 	
 	s.subspec 'Channel' do |channel|
 		channel.source_files = "Channel/Sources/*.{m,h}"
 		channel.private_header_files = Dir.glob("Channel/Sources/*.h")
 		channel.header_mappings_dir = "Channel/Sources/"
+		channel.header_dir = "Channel/Sources/"
 	end
 	
 	s.subspec 'Measure' do |measure|
 		measure.source_files = "Measure/Sources/*.{m,h}"
 		measure.private_header_files = Dir.glob("Measure/Sources/*.h")
 		measure.header_mappings_dir = "Measure/Sources/"
+		measure.header_dir = "Measure/Sources/"
 	end
 	
 	device_public = %w[Device/Sources/EDODeviceConnector.h
@@ -58,6 +61,7 @@ Pod::Spec.new do |s|
 		device.public_header_files = device_public
 		device.private_header_files = device_private
 		device.header_mappings_dir = "Device/Sources/"
+		device.header_dir = "Device/Sources/"
 	end
 
 	s.ios.deployment_target = "10.0"
