@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
 	s.name = "eDO"
-	s.version = "2.0.31"
+	s.version = "2.0.32"
 	s.summary = "ObjC and Swift remote invocation framework"
 	s.homepage = "https://github.com/brettfazio/eDO"
 	s.author = "Google Inc."
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
 	#s.public_header_files = public_headers
 	#s.private_header_files = private_headers
 	
-	s.xcconfig = { 'USER_HEADER_SEARCH_PATHS' => '"$(POD_ROOT)/**"' }
+	#s.xcconfig = { 'USER_HEADER_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/eDistantObject/** $(PODS_ROOT)/Pods/eDistantObject/**' }
 	
 	service_public = %w[Service/Sources/EDOClientService.h
                     Service/Sources/EDOClientService+Device.h
