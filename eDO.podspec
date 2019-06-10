@@ -16,17 +16,17 @@ Pod::Spec.new do |s|
 	
 	#s.pod_target_xcconfig = { 'USER_HEADER_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/eDistantObject/** $(PODS_ROOT)/Pods/eDistantObject/**' }
 	
-	service_public = %w[Service/Sources/EDOClientService.h
-                    Service/Sources/EDOClientService+Device.h
-                    Service/Sources/EDOClientServiceStatsCollector.h
-                    Service/Sources/EDOHostNamingService.h
-                    Service/Sources/EDOHostService.h
-                    Service/Sources/EDOHostService+Device.h
-                    Service/Sources/EDORemoteVariable.h
-                    Service/Sources/EDOServiceError.h
-                    Service/Sources/EDOServiceException.h
-                    Service/Sources/EDOServicePort.h
-                    Service/Sources/NSObject+EDOValueObject.h]
+	service_public = ["Service/Sources/EDOClientService.h",
+                    "Service/Sources/EDOClientService+Device.h",
+                    "Service/Sources/EDOClientServiceStatsCollector.h",
+                    "Service/Sources/EDOHostNamingService.h",
+                    "Service/Sources/EDOHostService.h",
+                    "Service/Sources/EDOHostService+Device.h",
+                    "Service/Sources/EDORemoteVariable.h",
+                    "Service/Sources/EDOServiceError.h",
+                    "Service/Sources/EDOServiceException.h",
+                    "Service/Sources/EDOServicePort.h",
+                    "Service/Sources/NSObject+EDOValueObject.h"]
 
 	service_private = (Dir.glob("Service/Sources/*.h")) - service_public
 	
@@ -49,8 +49,8 @@ s.subspec 'Service' do |service|
     measure.header_dir = "Measure/Sources"
   end
 
-  device_public = %w[Device/Sources/EDODeviceConnector.h
-                     Device/Sources/EDODeviceDetector.h]
+  device_public = ["Device/Sources/EDODeviceConnector.h",
+                     "Device/Sources/EDODeviceDetector.h"]
   device_private = (Dir.glob("Device/Sources/*.h")) - device_public
 
   s.subspec 'Device' do |device|
